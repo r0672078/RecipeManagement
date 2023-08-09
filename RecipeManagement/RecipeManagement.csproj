@@ -177,6 +177,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Migrations\20230809134350_InitialCreate.cs" />
+    <Compile Include="Migrations\20230809134350_InitialCreate.designer.cs">
+      <DependentUpon>20230809134350_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\RecipeManagingContextModelSnapshot.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Chef.cs" />
     <Compile Include="Models\Ingredient.cs" />
