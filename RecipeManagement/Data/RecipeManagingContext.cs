@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RecipeManagement.Models;
 
-namespace RecipeManagement.Models.Context
+namespace RecipeManagement.Data
 {
     class RecipeManagingContext : DbContext
     {
