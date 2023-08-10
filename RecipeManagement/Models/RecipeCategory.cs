@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RecipeManagement.Models
 {
-    public class RecipeCategory
+    public partial class RecipeCategory
     {
 
         public int RecipeCategoryId { get; set; }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RecipeManagement.Models
 {
-    public class Ingredient
+    public partial class Ingredient
     {
 
         public int IngredientId { get; set; }

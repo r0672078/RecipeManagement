@@ -2,7 +2,7 @@
 
 namespace RecipeManagement.Models
 {
-    public class RecipeIngredient
+    public partial class RecipeIngredient
     {
 
         public int RecipeIngredientId { get; set; }

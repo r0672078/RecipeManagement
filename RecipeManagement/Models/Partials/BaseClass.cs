@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace RecipeManagement.Models.Partials
+namespace RecipeManagement.Models
 {
     public abstract class BaseClass : IDataErrorInfo
     {
