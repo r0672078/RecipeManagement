@@ -3,7 +3,7 @@ using RecipeManagement.Models;
 
 namespace RecipeManagement.Data
 {
-    class RecipeManagingContext : DbContext
+    public class RecipeManagingContext : DbContext
     {
 
         public DbSet<Recipe> Recipes { get; set; }
