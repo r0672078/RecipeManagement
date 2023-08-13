@@ -177,6 +177,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\DatabaseOperations.cs" />
+    <Compile Include="Data\RecipeManagingContext.cs" />
+    <Compile Include="Data\Repositories\IRepository.cs" />
+    <Compile Include="Data\Repositories\Repository.cs" />
+    <Compile Include="Data\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Data\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Migrations\20230809134350_InitialCreate.cs" />
     <Compile Include="Migrations\20230809134350_InitialCreate.designer.cs">
       <DependentUpon>20230809134350_InitialCreate.cs</DependentUpon>
@@ -185,10 +191,17 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Chef.cs" />
     <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\Partials\BaseClass.cs" />
+    <Compile Include="Models\Partials\Category.cs" />
+    <Compile Include="Models\Partials\Chef.cs" />
+    <Compile Include="Models\Partials\Ingredient.cs" />
+    <Compile Include="Models\Partials\Recipe.cs" />
+    <Compile Include="Models\Partials\RecipeCategory.cs" />
+    <Compile Include="Models\Partials\RecipeIngredient.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipeCategory.cs" />
     <Compile Include="Models\RecipeIngredient.cs" />
-    <Compile Include="Models\Context\RecipeManagingContext.cs" />
+    <Compile Include="Viewmodels\BaseViewModel.cs" />
     <Compile Include="Viewmodels\MainViewModel.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
