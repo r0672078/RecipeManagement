@@ -39,8 +39,6 @@ namespace RecipeManagement.Data.Repositories
             return Context.SaveChanges();
         }
 
-        //uitbreiding
-
         public IEnumerable<T> Retrieve(Expression<Func<T, bool>> conditions,
            params Expression<Func<T, object>>[] includes)
         {
@@ -69,7 +67,6 @@ namespace RecipeManagement.Data.Repositories
             return Retrieve(null, includes).ToList();
         }
 
-        //handige functies
         public T SearchOnPK<TPrimaryKey>(TPrimaryKey id)
         {
             return Context.Set<T>().Find(id);
@@ -77,8 +74,6 @@ namespace RecipeManagement.Data.Repositories
 
         public int AddOrUpdate(T entity)
         {
-            // Wanneer de PK = 0, zal er worden toegevoegd
-            // Wanneer de PK > 0, zal er worden geupdatet
             Context.Set<T>().Update(entity);
             return Context.SaveChanges();
         }

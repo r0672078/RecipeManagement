@@ -37,7 +37,10 @@ namespace RecipeManagement.Viewmodels
         public string ErrorMessage
         {
             get { return _error; }
-            set { _error = value; }
+            set { 
+                _error = value;
+                NotifyPropertyChanged();
+            }
         }
 
 
@@ -46,7 +49,10 @@ namespace RecipeManagement.Viewmodels
         public string UpdateOrAdd
         {
             get { return _updateOrAdd; }
-            set { _updateOrAdd = value; }
+            set { 
+                _updateOrAdd = value;
+                NotifyPropertyChanged();
+            }
         }
 
         private string _updateOrAddButton;
@@ -54,7 +60,10 @@ namespace RecipeManagement.Viewmodels
         public string UpdateOrAddButton
         {
             get { return _updateOrAddButton; }
-            set { _updateOrAddButton = value; }
+            set { 
+                _updateOrAddButton = value;
+                NotifyPropertyChanged();
+            }
         }
 
         private ObservableCollection<Recipe> _recipes;
@@ -62,7 +71,10 @@ namespace RecipeManagement.Viewmodels
         public ObservableCollection<Recipe> Recipes
         {
             get { return _recipes; }
-            set { _recipes = value; }
+            set { 
+                _recipes = value;
+                NotifyPropertyChanged();
+            }
         }
 
         private Recipe _selectedRecipe;
@@ -70,7 +82,10 @@ namespace RecipeManagement.Viewmodels
         public Recipe SelectedRecipe
         {
             get { return _selectedRecipe; }
-            set { _selectedRecipe = value; }
+            set { 
+                _selectedRecipe = value;
+                NotifyPropertyChanged();
+            }
         }
 
         private Recipe _recipe;
@@ -78,7 +93,10 @@ namespace RecipeManagement.Viewmodels
         public Recipe Recipe
         {
             get { return _recipe; }
-            set { _recipe = value; }
+            set { 
+                _recipe = value;
+                NotifyPropertyChanged();
+            }
         }
 
         public ManageRecipeViewModel()

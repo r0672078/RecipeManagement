@@ -5,8 +5,156 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RecipeManagement.Views"
         mc:Ignorable="d"
-        Title="ManageRecipeView" Height="450" Width="800">
+        Title="ManageRecipeView" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label  Content="{Binding UpdateOrAdd}"              
+                materialDesign:HintAssist.Hint="Search"
+                VerticalAlignment="Center"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="20px"/>
+
+        <Label  Content="Name:"
+                Grid.Row="1"
+                materialDesign:HintAssist.Hint="Search"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="18px"
+                HorizontalAlignment="Right"/>
+
+        <Label  Content="Chef:"
+                Grid.Row="2"
+                materialDesign:HintAssist.Hint="Search"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="18px"
+                HorizontalAlignment="Right"/>
+
+        <Label  Content="Preparation Time:"
+                Grid.Row="3"
+                materialDesign:HintAssist.Hint="Search"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="18px"
+                HorizontalAlignment="Right"/>
+
+        <Label  Content="Cooking Time:"
+                Grid.Row="4"
+                materialDesign:HintAssist.Hint="Search"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="18px"
+                HorizontalAlignment="Right"/>
+
+        <Label  Content="Servings:"
+                Grid.Row="5"
+                materialDesign:HintAssist.Hint="Search"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="18px"
+                HorizontalAlignment="Right"/>
+
+        <Label  Content="Origin:"
+                Grid.Row="6"
+                materialDesign:HintAssist.Hint="Search"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="18px"
+                HorizontalAlignment="Right"/>
+
+        <Label  Content="Instructions:"
+                Grid.Row="7"
+                materialDesign:HintAssist.Hint="Search"
+                Margin="5"
+                FontWeight="Bold"
+                FontSize="18px"
+                HorizontalAlignment="Right"/>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="1"
+                 Margin="5"
+                 FontSize="18"
+                 Text="{Binding Recipe.Name}"
+                 AutomationProperties.AutomationId="Name"/>
+
+        <ComboBox Grid.Column="1"
+                 Grid.Row="2"
+                 Margin="5"
+                 FontSize="18"
+                 ItemsSource="{Binding Recipes}"
+                 SelectedValue="{Binding Chef.ChefId}"
+                 SelectedValuePath="Id"
+                 IsSynchronizedWithCurrentItem="True"
+                 AutomationProperties.AutomationId="Chef"/>
+
+        <TextBox Grid.Column="1"
+                  Grid.Row="3"
+                  Margin="5"
+                  FontSize="18"
+                  Text="{Binding Recipe.PreparationTime}"
+                  AutomationProperties.AutomationId="PreparationTime"/>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="4"
+                 Margin="5"
+                 FontSize="18"
+                 Text="{Binding Recipe.CookingTime}"
+                 AutomationProperties.AutomationId="CookingTime"/>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="5"
+                 Margin="5"
+                 FontSize="18"
+                 Text="{Binding Recipe.Servings}"
+                 AutomationProperties.AutomationId="Servings"/>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="6"
+                 Margin="5"
+                 FontSize="18"
+                 Text="{Binding Recipe.Origin}"
+                 AutomationProperties.AutomationId="Origin"/>
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="7"
+                 Margin="5"
+                 FontSize="18"
+                 Text="{Binding Recipe.Instructions}"
+                 AutomationProperties.AutomationId="Instructions"/>
+
+        <Button Grid.ColumnSpan="2"
+                Grid.Row="9"
+                ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                Content="{Binding UpdateOrAddButton}"
+                Margin="15"
+                Command="{Binding}" CommandParameter="{Binding UpdateOrAddButton}"
+                AutomationProperties.AutomationId="Confirm"/>
+
+        <Label Grid.ColumnSpan="2"
+               Grid.Row="10"
+               Content="{Binding ErrorMessage}"
+               Foreground="Red"/>
     </Grid>
 </Window>

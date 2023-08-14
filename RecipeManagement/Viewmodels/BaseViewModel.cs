@@ -27,7 +27,7 @@ namespace RecipeManagement.Viewmodels
 
         public abstract string this[string columnName] { get; }
 
-        public bool IsGeldig()
+        public bool IsValid()
         {
             return string.IsNullOrWhiteSpace(Error);
         }
@@ -36,20 +36,20 @@ namespace RecipeManagement.Viewmodels
         {
             get
             {
-                string foutmeldingen = "";
+                string errorMessages = "";
 
                 foreach (var item in this.GetType().GetProperties())
                 {
                     if (item.CanRead)
                     {
-                        string fout = this[item.Name];
-                        if (!string.IsNullOrWhiteSpace(fout))
+                        string error = this[item.Name];
+                        if (!string.IsNullOrWhiteSpace(error))
                         {
-                            foutmeldingen += fout + Environment.NewLine;
+                            errorMessages += error + Environment.NewLine;
                         }
                     }
                 }
-                return foutmeldingen;
+                return errorMessages;
             }
         }
     }

@@ -2,6 +2,7 @@
 using RecipeManagement.Data.UnitOfWork;
 using RecipeManagement.Models;
 using RecipeManagement.Utils;
+using RecipeManagement.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -47,7 +48,10 @@ namespace RecipeManagement.Viewmodels
         public string ErrorMessage
         {
             get { return _errorMessage; }
-            set { _errorMessage = value; }
+            set { 
+                _errorMessage = value;
+                NotifyPropertyChanged();
+            }
         }
 
         private string _filter;
@@ -65,7 +69,10 @@ namespace RecipeManagement.Viewmodels
         public ObservableCollection<Recipe> Recipes
         {
             get { return _recipes; }
-            set { _recipes = value; }
+            set { 
+                _recipes = value;
+                NotifyPropertyChanged();
+            }
         }
 
         private Recipe _selectedRecipe;
@@ -73,7 +80,10 @@ namespace RecipeManagement.Viewmodels
         public Recipe SelectedRecipe
         {
             get { return _selectedRecipe; }
-            set { _selectedRecipe = value; }
+            set { 
+                _selectedRecipe = value;
+                NotifyPropertyChanged();
+            }
         }
 
         public RecipeViewModel()
@@ -117,7 +127,7 @@ namespace RecipeManagement.Viewmodels
 
         private void OpenView(ManageRecipeViewModel vm)
         {
-            ManageRecipeViewModel view = new ManageRecipeViewModel();
+            ManageRecipeView view = new ManageRecipeView();
             vm.RecipesUpdatedEvent += Viewmodel_RecipesUpdatedEvent;
             view.DataContext = vm;
             view.ShowDialog();
